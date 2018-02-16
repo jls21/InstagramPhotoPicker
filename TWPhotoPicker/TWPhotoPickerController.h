@@ -10,6 +10,14 @@
 
 @interface TWPhotoPickerController : UIViewController
 
-@property (nonatomic, copy) void(^cropBlock)(UIImage *image);
 
+/**
+ If equals to nil, for crop will be choosen first photo in camera roll.
+ */
+@property (strong, nonatomic)  UIImage * _Nullable imageToCrop;
+
+@property (nonatomic, copy) void(^ _Nullable cropBlock)(UIImage * _Nullable image);
+
+- (void)animate;
+    
 @end
