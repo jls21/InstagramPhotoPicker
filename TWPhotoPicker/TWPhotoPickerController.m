@@ -215,7 +215,12 @@
 }
 
 - (void)backAction {
-    [self.navigationController popViewControllerAnimated:true];
+     if(self.presentingViewController){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [self.navigationController popViewControllerAnimated:true];
+    }
+//     [self.navigationController popViewControllerAnimated:true];
 }
 
 - (void)animate{
